@@ -11,6 +11,7 @@
         android:layout_height="250dp"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/viewpgae_home"
+
         />
     <me.relex.circleindicator.CircleIndicator
         android:layout_width="70dp"
@@ -32,7 +33,16 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
         app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/txt_truyen"
         />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_truyen"
+        android:layout_marginTop="310dp"
+        android:padding="10dp"
+        android:id="@+id/recy_view_danh_sach_truyen"
+         />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

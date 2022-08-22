@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.appdoctruyen.Fragmnet.DanhSachYeuThichFragment;
 import com.example.appdoctruyen.Fragmnet.HomeFragment;
+import com.example.appdoctruyen.Fragmnet.TheLoaiFragment;
 
 public class AdapterViewPage2 extends FragmentStateAdapter {
 
@@ -21,7 +21,7 @@ public class AdapterViewPage2 extends FragmentStateAdapter {
             case 0:
                 return new HomeFragment();
             case 1:
-                return new DanhSachYeuThichFragment();
+                return new TheLoaiFragment();
             default:
                 return new HomeFragment();
         }

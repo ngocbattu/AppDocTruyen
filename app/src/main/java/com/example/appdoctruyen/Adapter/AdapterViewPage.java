@@ -1,16 +1,33 @@
 package com.example.appdoctruyen.Adapter;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.bumptech.glide.Glide;
+import com.example.appdoctruyen.Model.ListAnh;
+import com.example.appdoctruyen.R;
+
+import java.util.List;
+
 public class AdapterViewPage extends PagerAdapter {
+
+    private Context context;
+    private List<ListAnh> list;
+
+    public AdapterViewPage(Context context, List<ListAnh> list) {
+        this.context = context;
+        this.list = list;
+    }
 
     @Override
     public int getCount() {
-        return 0;
+        return list.size();
     }
 
     @Override
@@ -21,11 +38,19 @@ public class AdapterViewPage extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        return super.instantiateItem(container, position);
+        View view = LayoutInflater.from (container.getContext ()).inflate (R.layout.item_list_chuyen_anh,container,false);
+        ImageView imageView = view.findViewById (R.id.image_slide1);
+
+        ListAnh listAnh = list.get (position);
+        Glide.with (context).load (listAnh.getImageAnh()).into (imageView);
+
+        container.addView (view);
+        return view;
     }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        super.destroyItem(container, position, object);
+        container.removeView ((View) object);
     }
+
 }
